@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/EkoCommunications/EkoQueue.svg?branch=master)](https://travis-ci.org/EkoCommunications/EkoQueue)
+
 # EkoJoiObjectId
 Extending Joi to validate and convert mongo/mongoose ObjectId
 
