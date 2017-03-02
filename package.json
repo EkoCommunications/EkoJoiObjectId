@@ -1,6 +1,6 @@
 {
   "name": "eko-joi-objectid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extending Joi to validate and convert mongo/mongoose ObjectId",
   "main": "index.js",
   "scripts": {
