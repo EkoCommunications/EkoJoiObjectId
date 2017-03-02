@@ -22,7 +22,7 @@
     "eko"
   ],
   "author": "Stefan Knoch <stefan@ekoapp.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/EkoCommunications/EkoJoiObjectId/issues"
   },
