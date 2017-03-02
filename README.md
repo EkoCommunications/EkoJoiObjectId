@@ -6,6 +6,7 @@
 # EkoJoiObjectId
 Extending Joi to validate and convert mongo/mongoose ObjectId
 
+
 ## Installation
 
 ```
@@ -25,3 +26,8 @@ var result = Joi.attempt(someObjectId, Joi.ObjectId());
 
 result instanceof ObjectId; // => true
 ```
+
+
+## Tests
+
+  `npm test`
