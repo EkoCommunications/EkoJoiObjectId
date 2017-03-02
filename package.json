@@ -1,0 +1,36 @@
+{
+  "name": "eko-joi-objectid",
+  "version": "1.0.0",
+  "description": "Extending Joi to validate and convert mongo/mongoose ObjectId",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "./node_modules/.bin/jscs lib test examples index.js || true",
+    "fix": "./node_modules/.bin/jscs lib test examples index.js --fix || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ch1ll0ut1@github.com/EkoCommunications/EkoJoiObjectId.git"
+  },
+  "keywords": [
+    "joi",
+    "extension",
+    "mongodb",
+    "mongo",
+    "mongoose",
+    "objectid",
+    "eko"
+  ],
+  "author": "Stefan Knoch <stefan@ekoapp.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EkoCommunications/EkoJoiObjectId/issues"
+  },
+  "homepage": "https://github.com/EkoCommunications/EkoJoiObjectId#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "joi": "^10.2.2",
+    "mocha": "^3.2.0",
+    "mongoose": "^4.8.5"
+  }
+}
