@@ -22,7 +22,7 @@ module.exports = (Joi, ObjectId) => {
         }
 
         return value;
-      },
-    }],
+      }
+    }]
   }).ObjectId;
 };
