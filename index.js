@@ -2,6 +2,13 @@
 
 const assert = require('assert');
 
+/**
+ * Extend joi with new ObjectId type and return the new Joi instance
+ *
+ * @param  {Object} Joi      Joi instance 
+ * @param  {Object} ObjectId Mongo or Mongoose ObjectId type object
+ * @return {Object}          modified Joi instance
+ */
 module.exports = (Joi, ObjectId) => {
   assert(Joi && Joi.isJoi, 'you must pass Joi as an argument');
 
