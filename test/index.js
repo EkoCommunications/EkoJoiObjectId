@@ -7,7 +7,7 @@ Joi.ObjectId = require('../')(Joi, ObjectId);
 
 describe('JoiObjectId', function () {
 
-  it('validate correct objectid and convert to Mongoose.ObjectId', function* () {
+  it('validate correct objectid and convert to Mongoose.ObjectId', function () {
     const objectId = new ObjectId();
     const result = Joi.attempt(objectId, Joi.ObjectId());
 
@@ -15,7 +15,7 @@ describe('JoiObjectId', function () {
     expect(result.toString()).to.equal(objectId.toString());
   });
 
-  it('validate correct objectid given as string and convert to Mongoose.ObjectId', function* () {
+  it('validate correct objectid given as string and convert to Mongoose.ObjectId', function () {
     const objectIdString = (new ObjectId()).toString();
     const result = Joi.attempt(objectIdString, Joi.ObjectId());
 
@@ -23,12 +23,14 @@ describe('JoiObjectId', function () {
     expect(result.toString()).to.equal(objectIdString);
   });
 
-  it('reject invalid object id', function* () {
+  it('reject invalid object id', function () {
+
     function test() {
       const objectIdString = "123";
+
       const result = Joi.attempt(objectIdString, Joi.ObjectId());
     }
 
-    expect(test).to.throw(Error);
+    expect(test).to.throw('value need to be a valid ObjectId, a String of 12 bytes or a string of 24 hex characters');
   });
 });

@@ -12,11 +12,18 @@ const assert = require('assert');
 module.exports = (Joi, ObjectId) => {
   assert(Joi && Joi.isJoi, 'you must pass Joi as an argument');
 
-  return Joi.extend({
+  const modifiedJoi = Joi.extend({
     name: 'ObjectId',
+    language: {
+      ObjectId: 'value need to be a valid ObjectId, a String of 12 bytes or a string of 24 hex characters'
+    },
     pre(value, state, options) {
       if (options.convert) {
-        return ObjectId(value);
+        try {
+          return ObjectId(value);
+        } catch(error) {
+          return value;
+        }
       }
 
       return value;
@@ -24,12 +31,20 @@ module.exports = (Joi, ObjectId) => {
     rules: [{
       name: 'ObjectId',
       validate(params, value, state, options) {
-        if (value.toString() !== ObjectId(value).toString()) {
-          this.createError('value is not a valid ObjectId', { v: value }, state, options);
+        try {
+          if (value.toString() !== ObjectId(value).toString()) {
+            throw new Error('invalid value');
+          }
+        } catch(error) {
+          return this.createError('ObjectId.ObjectId', { v: value }, state, options);          
         }
 
         return value;
       }
     }]
-  }).ObjectId;
+  });
+
+  return () => {
+    return modifiedJoi.ObjectId().ObjectId();
+  }
 };
